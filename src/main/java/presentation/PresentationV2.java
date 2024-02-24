@@ -2,6 +2,7 @@ package presentation;
 
 import dao.IDao;
 import metier.IMetier;
+import metier.MetierImpl;
 
 import java.io.File;
 import java.lang.reflect.Method;
@@ -17,7 +18,7 @@ public class PresentationV2 {
             Class cDao = Class.forName(daoClassname);
             IDao dao = (IDao) cDao.getConstructor().newInstance();
 
-
+            //IMetier metier = new MetierImpl();
             String metierClassname = scanner.nextLine();
             Class cMetier = Class.forName(metierClassname);
             IMetier metier = (IMetier) cMetier.getConstructor().newInstance();
